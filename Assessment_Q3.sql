@@ -4,7 +4,7 @@
 WITH last_transactions AS (
     SELECT 
         id,
-        next_returns_date AS last_transaction_date
+        MAX(next_returns_date) AS last_transaction_date
     FROM savings_savingsaccount
     GROUP BY id
 )
